@@ -2,14 +2,15 @@
 
 import { Project } from '@prisma/client'
 import React from 'react'
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
-import Image from 'next/image'
+import {Card, CardHeader, CardBody, CardFooter, Image} from "@nextui-org/react";
 
 type Props = {
     project: Project
 }
 
 export default async function ProjectElement({project}: Props) {
+
+  console.log(project.thumbnailImageUrl)
 
   return (
     <Card className="max-w-[340px]">
@@ -18,7 +19,7 @@ export default async function ProjectElement({project}: Props) {
           <div className="flex flex-col gap-1 items-start justify-center">
             <h4 className="text-small font-semibold leading-none text-default-600">{project.program}</h4>
             <h5 className="text-small tracking-tight text-default-400">{project.beneficient}</h5>
-            <Image src={project.thumbnailImageUrl} alt="logo" width={100} height={100} />
+            <Image src={`${project.thumbnailImageUrl}`} alt="logo" width={100} height={100} />
           </div>
         </div>
       </CardHeader>

@@ -28,7 +28,7 @@ export default function MyNavbar({ session }: Props) {
         <NavbarBrand className="mr-4">
           <Link href="/" className="flex items-center">
             <p className="text-medium font-medium p-4">
-              Odkryj Unijne Projekty
+              EuProjects
             </p>
           </Link>
         </NavbarBrand>

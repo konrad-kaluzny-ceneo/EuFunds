@@ -27,7 +27,7 @@ export default function RootLayout({
         <Providers>
           <MyNavbarProvider />
 
-          <div className="container max-w-7xl mx-auto h-full pt-12">
+          <div className="container mx-auto h-full pt-12 px-4">
             {children}
           </div>
           <ToastContainer />

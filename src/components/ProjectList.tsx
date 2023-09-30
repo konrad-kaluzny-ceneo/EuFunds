@@ -5,7 +5,7 @@ import { Project } from '@prisma/client';
 
 type Props = {}
 
-export default async function ProjectList({}: Props) {
+export default async function ProjectList({ }: Props) {
   const projects: Project[] = await db.project.findMany({
     orderBy: {
       program: 'asc'
@@ -17,11 +17,11 @@ export default async function ProjectList({}: Props) {
   return (
     <div>
       <h2>Projects</h2>
-      <div className='columns-3'>
+      <div className='columns-1 md:columns-3'>
         {projects.map((project: Project) => (
-            <ProjectElement project={project} />
-            ))}
-            </div>
+          <ProjectElement project={project} key={project.id}/>
+        ))}
+      </div>
     </div>
   )
 }
